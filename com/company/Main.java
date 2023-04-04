@@ -5,16 +5,32 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        // write your code
+
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int[] array = new int[n];
         for (int i=0; i<n; i++){
             array[i] = scanner.nextInt();
         }
-        int min = findMinFromArr(array, n);
-        System.out.println("Minimum is " + min);
+        double min = findAverage(array, n);
+        System.out.println("Average is " + min);
     }
+
+    public static double findAverage(int[] arr, int n){
+        double sum,avg;
+        if(n==1)
+            return arr[0];
+        else
+        {
+            sum= arr[n-1]+ (n-1) * findAverage(arr,n-1);
+        }
+
+        avg = sum/n;
+        return avg;
+    }
+
+
+
     public static int findMinFromArr(int[] arr, int n){
         if(n==1)
             return arr[0];
