@@ -8,16 +8,29 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int i = scanner.nextInt();
-        /*int[] array = new int[n];
-          for (int i=0; i<n; i++){
-            array[i] = scanner.nextInt();*/
 
-        int min = findPow(n,i);
-        System.out.println(n+" in power of "+i+" is " + min);
+        int[] array = new int[n];
+          for (int i=0; i<n; i++) {
+              array[i] = scanner.nextInt();
+          }
+        reverseArray(array, 0, n-1);
+        System.out.println("Reversed array:");
+        for(int i=0; i<n; i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 
-    public static int findPow(int n,int i){
+    public static void reverseArray(int[] arr, int start, int end) {
+        if(start >= end) {
+            return;
+        }
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        reverseArray(arr, start+1, end-1);
+    }
+
+public static int findPow(int n,int i){
         if(i==1) {
             return n;
         }
@@ -102,3 +115,4 @@ public class Main {
     }
 
 }
+
