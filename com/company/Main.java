@@ -8,13 +8,33 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int[] array = new int[n];
-        for (int i=0; i<n; i++){
-            array[i] = scanner.nextInt();
-        }
-        double min = findAverage(array, n);
-        System.out.println("Average is " + min);
+        //int[] array = new int[n];
+        //for (int i=0; i<n; i++){
+          //  array[i] = scanner.nextInt();
+
+        String min = isPrime(n,2);
+        System.out.println("number  is " + min);
     }
+
+
+    public static String isPrime(int n, int div){
+        String p = "prime";
+        String c = "composite";
+
+        if (n <= 2){
+            return (n == 2) ? p : c;
+        }
+        if (n % div == 0){
+            return c;
+        }
+        if (div * div > n){
+            return p;
+        }
+
+        return isPrime(n , (div + 1));
+    }
+
+
 
     public static double findAverage(int[] arr, int n){
         double sum,avg;
@@ -28,8 +48,6 @@ public class Main {
         avg = sum/n;
         return avg;
     }
-
-
 
     public static int findMinFromArr(int[] arr, int n){
         if(n==1)
