@@ -12,12 +12,21 @@ public class Main {
           for (int i=0; i<n; i++){
             array[i] = scanner.nextInt();*/
 
-        int min = findFactor(n);
-        System.out.println("factorial of your number is " + min);
+        int min = findFibonacci(n);
+        System.out.println(n+"-th element is " + min);
     }
 
 
+    public static int findFibonacci(int n){
+        if(n==1) {
+            return 1;
+        }
+        if(n==0){
+            return 0;
+        }
 
+        return  findFibonacci(n-1)+findFibonacci(n-2);
+    }
 
     public static int findFactor(int n){
 
