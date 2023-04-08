@@ -8,14 +8,29 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        //int[] array = new int[n];
-        //for (int i=0; i<n; i++){
-          //  array[i] = scanner.nextInt();
+        /*int[] array = new int[n];
+          for (int i=0; i<n; i++){
+            array[i] = scanner.nextInt();*/
 
-        String min = isPrime(n,2);
-        System.out.println("number  is " + min);
+        int min = findFactor(n);
+        System.out.println("factorial of your number is " + min);
     }
 
+
+
+
+    public static int findFactor(int n){
+
+        if(n==1) {
+            return 1;
+        }
+        if(n==0){
+            return 1;
+        }
+
+        return  n*findFactor(n-1);
+
+    }
 
     public static String isPrime(int n, int div){
         String p = "prime";
