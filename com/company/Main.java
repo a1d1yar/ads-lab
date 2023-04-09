@@ -7,17 +7,22 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
-        boolean min = isDigits(s);
-        if (min==true){
-            System.out.println("yes");
-        }
-        else{
-            System.out.println("no");
-        }
-
+        int n = scanner.nextInt();
+        int k = scanner.nextInt();
+        int min = binomCoef(n,k);
+        System.out.println(min);
 
     }
+
+
+    public static int binomCoef(int n, int k) {
+        if (k == 0 || k == n) {
+            return 1;
+        } else {
+            return binomCoef(n - 1, k - 1) + binomCoef(n - 1, k);
+        }
+    }
+
     public static boolean isDigits(String s){
         if (s.length() == 0) {
             return false;
