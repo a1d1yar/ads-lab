@@ -7,19 +7,26 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+        String s = scanner.nextLine();
+        boolean min = isDigits(s);
+        if (min==true){
+            System.out.println("yes");
+        }
+        else{
+            System.out.println("no");
+        }
 
-        int[] array = new int[n];
-          for (int i=0; i<n; i++) {
-              array[i] = scanner.nextInt();
-          }
-        reverseArray(array, 0, n-1);
-        System.out.println("Reversed array:");
-        for(int i=0; i<n; i++) {
-            System.out.print(array[i] + " ");
+
+    }
+    public static boolean isDigits(String s){
+        if (s.length() == 0) {
+            return false;
+        } else if (s.length() == 1) {
+            return Character.isDigit(s.charAt(0));
+        } else {
+            return Character.isDigit(s.charAt(0)) && isDigits(s.substring(1));
         }
     }
-
     public static void reverseArray(int[] arr, int start, int end) {
         if(start >= end) {
             return;
