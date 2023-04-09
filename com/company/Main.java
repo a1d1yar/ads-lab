@@ -9,12 +9,18 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int k = scanner.nextInt();
-        int min = binomCoef(n,k);
+        int min = findGCD(n,k);
         System.out.println(min);
 
     }
 
-
+    public static int findGCD(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else {
+            return findGCD(b, a % b);
+        }
+    }
     public static int binomCoef(int n, int k) {
         if (k == 0 || k == n) {
             return 1;
