@@ -11,7 +11,7 @@ public class Main {
         int functionNumber = scanner.nextInt();
 
         switch (functionNumber) {
-            case 1:
+            case 10:
                 System.out.println("task 10");
                 int a = scanner.nextInt();
                 int b = scanner.nextInt();
@@ -19,7 +19,7 @@ public class Main {
                 System.out.println("The GCD is " + gcdResult);
                 break;
 
-            case 2:
+            case 9:
                 System.out.println("task 9");
                 int n = scanner.nextInt();
                 int k = scanner.nextInt();
@@ -27,7 +27,7 @@ public class Main {
                 System.out.println("The binomial coefficient is " + binomCoefResult);
                 break;
 
-            case 3:
+            case 8:
                 System.out.println("task 8");
                 String s = scanner.next();
                 boolean isDigitsResult = isDigits(s);
@@ -39,7 +39,7 @@ public class Main {
                 }
                 break;
 
-            case 4:
+            case 7:
                 System.out.println("task 7");
                 int length = scanner.nextInt();
                 int[] arr = new int[length];
@@ -55,7 +55,7 @@ public class Main {
                 System.out.println();
                 break;
 
-            case 5:
+            case 6:
                 System.out.println("task 6");
                 int n2 = scanner.nextInt();
                 int i = scanner.nextInt();
@@ -63,28 +63,28 @@ public class Main {
                 System.out.println("power of "+n2+"in "+i+"is"+ powResult);
                 break;
 
-            case 6:
+            case 5:
                 System.out.println("task 5");
                 int n3 = scanner.nextInt();
                 int fibonacciResult = findFibonacci(n3);
                 System.out.println("The " + n3 + "th Fibonacci number is " + fibonacciResult);
                 break;
 
-            case 7:
+            case 4:
                 System.out.println("task 4");
                 int n4 = scanner.nextInt();
                 int factorResult = findFactor(n4);
                 System.out.println(n4 + "! = " + factorResult);
                 break;
 
-            case 8:
+            case 3:
                 System.out.println("task 3");
                 int n5 = scanner.nextInt();
                 String primeResult = isPrime(n5, 2);
                 System.out.println(n5 + " is " + primeResult);
                 break;
 
-            case 9:
+            case 2:
                 System.out.println("task 2");
                 int n6 = scanner.nextInt();
                 int[] array = new int[n6];
@@ -93,6 +93,16 @@ public class Main {
                 }
                 double mini = findAverage(array, n6);
                 System.out.println("Average is " + mini);
+
+            case 1:
+                System.out.println("task 1");
+                int n7 = scanner.nextInt();
+                int[] arra = new int[n7];
+                for (int ik=0; ik<n7; ik++){
+                    arra[ik] = scanner.nextInt();
+                }
+                int min = findMinFromArr(arra, n7);
+                System.out.println("Minimum is " + min);
 
 
 
